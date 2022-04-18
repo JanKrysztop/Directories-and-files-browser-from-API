@@ -1,18 +1,22 @@
 import { createGlobalStyle } from 'styled-components';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Root from './components/Root';
 
 const App = () => {
   return (
     <>
-      <Reset />
-      <Root />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Root />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 };
 
 export default App;
 
-const Reset = createGlobalStyle`
+export const Reset = createGlobalStyle`
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,

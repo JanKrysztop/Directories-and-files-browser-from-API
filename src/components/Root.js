@@ -4,6 +4,7 @@ import { fetchRootData } from '../services/fetching';
 import folder from '../icons/folder.svg';
 import files from '../icons/files.svg';
 import image from '../icons/image.svg';
+import { Reset } from '../App';
 
 const Root = () => {
   const [root, setRoot] = useState([]);
@@ -14,27 +15,32 @@ const Root = () => {
   }, []);
 
   return (
-    <StyledWrapper>
-      <StyledPath key={root.id}>{root.name}</StyledPath>
-      <StyledContent>
-        {root.directories.map((dir) => (
-          <StyledDir key={dir.id}>
-            <StyledImg src={folder} />
-            {dir.name}
-          </StyledDir>
-        ))}
-        {root.files.map((file) => (
-          <StyledFile key={file.length}>
-            {file.name.slice(-3) === 'jpg' ? (
-              <StyledImg src={image} />
-            ) : (
-              <StyledImg src={files} />
-            )}
-            {file.name.length >= 11 ? file.name.slice(0, 8) + '...' : file.name}
-          </StyledFile>
-        ))}
-      </StyledContent>
-    </StyledWrapper>
+    <>
+      <Reset />
+      <StyledWrapper>
+        <StyledPath key={root.id}>{root.name}</StyledPath>
+        <StyledContent>
+          {root.directories.map((dir) => (
+            <StyledDir key={dir.id}>
+              <StyledImg src={folder} />
+              {dir.name}
+            </StyledDir>
+          ))}
+          {root.files.map((file) => (
+            <StyledFile key={file.length}>
+              {file.name.slice(-3) === 'jpg' ? (
+                <StyledImg src={image} />
+              ) : (
+                <StyledImg src={files} />
+              )}
+              {file.name.length >= 11
+                ? file.name.slice(0, 8) + '...'
+                : file.name}
+            </StyledFile>
+          ))}
+        </StyledContent>
+      </StyledWrapper>
+    </>
   );
 };
 
