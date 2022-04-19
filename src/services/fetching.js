@@ -10,3 +10,7 @@ const baseUrl = `https://fnp5vd20r2.execute-api.us-east-1.amazonaws.com/dev/dire
 export const fetchRootData = () => {
   return fetch(baseUrl).then(responseToJson);
 };
+
+export const fetchDirRootData = (dirId) => {
+  return fetch(`${baseUrl}/${dirId}`).then(responseToJson);
+};

@@ -1,6 +1,8 @@
 import { createGlobalStyle } from 'styled-components';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Root from './components/Root';
+import Dir1 from './components/Dir1';
+import Dir2 from './components/Dir2';
 
 const App = () => {
   return (
@@ -8,6 +10,8 @@ const App = () => {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Root />} />
+          <Route path="/dir1" element={<Dir1 />} />
+          <Route path="/dir2" element={<Dir2 />} />
         </Routes>
       </BrowserRouter>
     </>
