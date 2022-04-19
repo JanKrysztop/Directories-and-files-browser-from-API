@@ -32,6 +32,7 @@ const StyledDir = styled.div`
   flex-direction: column;
   font-size: 18px;
   color: white;
+
   align-items: center;
   width: 12vw;
   height: 15vh;
