@@ -7,10 +7,17 @@ const responseToJson = (response) => {
 
 const baseUrl = `https://fnp5vd20r2.execute-api.us-east-1.amazonaws.com/dev/directories`;
 
-export const fetchRootData = () => {
+const fetchRootData = () => {
   return fetch(baseUrl).then(responseToJson);
 };
 
-export const fetchDirRootData = (dirId) => {
+const fetchDirectoryData = (dirId) => {
   return fetch(`${baseUrl}/${dirId}`).then(responseToJson);
+};
+
+export const fetchData = (dirId) => {
+  if (dirId === undefined) {
+    return fetchRootData();
+  }
+  return fetchDirectoryData(dirId);
 };

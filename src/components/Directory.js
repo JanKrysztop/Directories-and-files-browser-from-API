@@ -1,27 +1,16 @@
 import styled from 'styled-components';
-import { useState, useEffect } from 'react';
 import folder from '../icons/folder.svg';
-import { fetchDirRootData } from '../services/fetching';
 
-const DirRoot = (props) => {
-  const [dirRoot, setDirRoot] = useState([]);
-
-  useEffect(() => {
-    fetchDirRootData(props.dir.id).then(setDirRoot);
-    console.log(dirRoot);
-  }, []);
-
+export const Directory = ({ dir }) => {
   return (
     <>
-      <StyledDir key={props.dir.id}>
+      <StyledDir key={dir.id}>
         <StyledImg src={folder} />
-        {props.dir.name}
+        {dir.name}
       </StyledDir>
     </>
   );
 };
-
-export default DirRoot;
 
 const StyledDir = styled.div`
   display: flex;
