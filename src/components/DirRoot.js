@@ -2,8 +2,6 @@ import styled from 'styled-components';
 import { useState, useEffect } from 'react';
 import folder from '../icons/folder.svg';
 import { fetchDirRootData } from '../services/fetching';
-import { NavLink } from 'react-router-dom';
-import Dir1 from './Dir1';
 
 const DirRoot = (props) => {
   const [dirRoot, setDirRoot] = useState([]);
@@ -15,12 +13,10 @@ const DirRoot = (props) => {
 
   return (
     <>
-      <NavLink to={`/dir${props.dir.id}`}>
-        <StyledDir key={props.dir.id}>
-          <StyledImg src={folder} />
-          {props.dir.name}
-        </StyledDir>
-      </NavLink>
+      <StyledDir key={props.dir.id}>
+        <StyledImg src={folder} />
+        {props.dir.name}
+      </StyledDir>
     </>
   );
 };

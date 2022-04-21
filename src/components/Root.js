@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react';
 import { fetchRootData } from '../services/fetching';
 import files from '../icons/files.svg';
 import image from '../icons/image.svg';
-import { Reset } from '../App';
 import DirRoot from './DirRoot';
 
 const Root = () => {
@@ -16,7 +15,6 @@ const Root = () => {
 
   return (
     <>
-      <Reset />
       <StyledWrapper>
         <StyledPath key={root.id}>{root.name}</StyledPath>
         <StyledContent>
