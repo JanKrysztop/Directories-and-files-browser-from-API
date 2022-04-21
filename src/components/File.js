@@ -3,14 +3,16 @@ import files from '../icons/files.svg';
 import image from '../icons/image.svg';
 
 export const File = ({ file }) => {
+  const { name } = file;
+
   return (
     <StyledFile>
-      {file.name.slice(-3) === 'jpg' ? (
+      {name.slice(-3) === 'jpg' ? (
         <StyledImg src={image} />
       ) : (
         <StyledImg src={files} />
       )}
-      {file.name.length >= 11 ? file.name.slice(0, 8) + '...' : file.name}
+      {name.length >= 11 ? file.name.slice(0, 8) + '...' : name}
     </StyledFile>
   );
 };

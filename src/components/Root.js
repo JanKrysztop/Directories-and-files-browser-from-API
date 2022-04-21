@@ -4,23 +4,30 @@ import { fetchData } from '../services/fetching';
 import { Directory } from './Directory';
 import { File } from './File';
 
+const getLast = (items) => items[items.length - 1];
+
 const Root = () => {
-  const [root, setRoot] = useState([]);
+  const [data, setData] = useState([]);
+  const [path, setPath] = useState([]);
 
   useEffect(() => {
-    fetchData().then(setRoot);
-    console.log(root);
-  }, []);
+    const dirId = getLast(path)?.id;
+    fetchData(dirId).then(setData);
+  }, [path]);
+
+  const handleOpen = (dir) => {
+    setPath((oldPath) => [...oldPath, dir]);
+  };
 
   return (
     <>
       <StyledWrapper>
-        <StyledPath key={root.id}>{root.name}</StyledPath>
+        <StyledPath key={data.id}>{data.name}</StyledPath>
         <StyledContent>
-          {root.directories?.map((dir) => (
-            <Directory key={dir.id} dir={dir} />
+          {data.directories?.map((dir) => (
+            <Directory key={dir.id} dir={dir} handleOpen={handleOpen} />
           ))}
-          {root.files?.map((file, index) => (
+          {data.files?.map((file, index) => (
             <File key={index} file={file} />
           ))}
         </StyledContent>
@@ -42,12 +49,10 @@ const StyledPath = styled.h1`
   font-size: 6vh;
   height: 15vh;
   color: white;
-  /* border: 1px solid red; */
 `;
 
 const StyledContent = styled.div`
   display: flex;
   flex-wrap: wrap;
   height: 45vh;
-  /* border: 1px solid red; */
 `;

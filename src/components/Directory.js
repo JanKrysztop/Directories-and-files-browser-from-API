@@ -1,12 +1,17 @@
 import styled from 'styled-components';
 import folder from '../icons/folder.svg';
 
-export const Directory = ({ dir }) => {
+export const Directory = ({ dir, handleOpen }) => {
+  const { id, name } = dir;
+
+  const handleClick = () => {
+    handleOpen(dir);
+  };
   return (
     <>
-      <StyledDir key={dir.id}>
+      <StyledDir key={id} onClick={handleClick}>
         <StyledImg src={folder} />
-        {dir.name}
+        {name}
       </StyledDir>
     </>
   );
