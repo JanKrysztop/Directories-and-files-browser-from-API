@@ -20,13 +20,13 @@ export const File = ({ file }) => {
 const StyledFile = styled.div`
   display: flex;
   flex-direction: column;
-  font-size: 18px;
+  font-size: 30px;
   color: white;
   align-items: center;
-  width: 12vw;
-  height: 15vh;
+  width: 220px;
+  height: 220px;
 `;
 
 const StyledImg = styled.img`
-  width: 4vw;
+  width: 120px;
 `;

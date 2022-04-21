@@ -42,13 +42,11 @@ const Root = () => {
 export default Root;
 
 const StyledWrapper = styled.div`
-  height: 100vh;
-
+  min-height: 100vh;
   background-color: #2f343d;
 `;
 
 const StyledContent = styled.div`
   display: flex;
   flex-wrap: wrap;
-  height: 45vh;
 `;

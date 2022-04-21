@@ -21,4 +21,5 @@ const StyledPath = styled.h1`
   font-size: 6vh;
   height: 15vh;
   color: white;
+  cursor: pointer;
 `;
