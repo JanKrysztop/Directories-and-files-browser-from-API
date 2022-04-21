@@ -21,4 +21,8 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
+
+html {
+  font-family: sans-serif;
+}
 `;
