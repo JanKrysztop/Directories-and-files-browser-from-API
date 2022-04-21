@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { fetchData } from '../services/fetching';
 import { Directory } from './Directory';
 import { File } from './File';
+import { Navigation } from './Navigation';
 
 const getLast = (items) => items[items.length - 1];
 
@@ -15,24 +16,26 @@ const Root = () => {
     fetchData(dirId).then(setData);
   }, [path]);
 
-  const handleOpen = (dir) => {
-    setPath((oldPath) => [...oldPath, dir]);
+  const handleOpen = (clickedDir) => {
+    setPath((oldPath) => [...oldPath, clickedDir]);
+  };
+
+  const handleNavigate = (currentLocation) => {
+    setPath((oldPath) => oldPath.slice(0, currentLocation));
   };
 
   return (
-    <>
-      <StyledWrapper>
-        <StyledPath key={data.id}>{data.name}</StyledPath>
-        <StyledContent>
-          {data.directories?.map((dir) => (
-            <Directory key={dir.id} dir={dir} handleOpen={handleOpen} />
-          ))}
-          {data.files?.map((file, index) => (
-            <File key={index} file={file} />
-          ))}
-        </StyledContent>
-      </StyledWrapper>
-    </>
+    <StyledWrapper>
+      <Navigation path={path} navigateUp={handleNavigate} />
+      <StyledContent>
+        {data.directories?.map((dir) => (
+          <Directory key={dir.id} dir={dir} handleOpen={handleOpen} />
+        ))}
+        {data.files?.map((file, index) => (
+          <File key={index} file={file} />
+        ))}
+      </StyledContent>
+    </StyledWrapper>
   );
 };
 
@@ -42,13 +45,6 @@ const StyledWrapper = styled.div`
   height: 100vh;
 
   background-color: #2f343d;
-`;
-
-const StyledPath = styled.h1`
-  margin-left: 3vw;
-  font-size: 6vh;
-  height: 15vh;
-  color: white;
 `;
 
 const StyledContent = styled.div`
