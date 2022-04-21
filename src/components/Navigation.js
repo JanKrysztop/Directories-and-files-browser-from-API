@@ -17,9 +17,9 @@ export const Navigation = ({ path, navigateUp }) => {
 };
 
 const StyledPath = styled.h1`
-  margin-left: 3vw;
-  font-size: 6vh;
-  height: 15vh;
+  margin-left: 50px;
+  font-size: 70px;
+  height: 150px;
   color: white;
   cursor: pointer;
 `;

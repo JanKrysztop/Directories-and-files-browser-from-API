@@ -1,70 +1,58 @@
-# Getting Started with Create React App
+# Evojam recruitment task
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## How to start up this project :
 
-## Available Scripts
+#### 1. First, click on the button with three dots on it
 
-In the project directory, you can run:
+<img src='./public/1.png' width='1200'>
 
-### `npm start`
+#### 2. Then select "Download repository" option
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<img src='./public/2.png' width='1200'>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+#### 3. Unzip downloaded folder to target location
 
-### `npm test`
+#### 4. Install node.js from this link : https://nodejs.org/en/
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### 5. Open up a console (powershell/bash)
 
-### `npm run build`
+#### 6. Navigate to where "jan_krysztop-evojam_recruitment_task" is located
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    cd /.../jan_krysztop-evojam_recruitment_task
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+#### 7. While inside this folder type in command:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    npm install
 
-### `npm run eject`
+#### 8. And finally use this command to start local server and view project in the browser:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+    npm start
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Content of the task:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Build a working version of the attached directory browser.<br />
+The app allows users to click on directories and explore their contents.<br />
+Content of a directory comes from the provided api.<br />
+Use whatever technology you are most comfortable with, whether it's React, Angular or plain javascript.<br />
+I'm interested to see how you divide and structure your code and how you implement api integration.<br />
+Try to replicate the layout as closely as possible and fulfill all the functional requirements.<br />
+Compatibility with Chrome is fine for this exercise - don't worry about IE / Firefox, etc. Finally, a short explanation of how to run the app and why you choose the technologies you choose would be very helpful.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+#### API
 
-## Learn More
+Use this api url: https://fnp5vd20r2.execute-api.us-east-1.amazonaws.com/dev to fetch directory contents
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+#### Functional Requirements
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. on initial load fetch and display root directory
+2. when user clicks on a directory fetch and display selected directory contents
+3. display current directory path at the top of the screen
+4. clicking on a directory name in the directory path should take user to that directory
+5. display image icon for files with `jpg` extension, folder icon for directories and generic file icon for anything else (icons are taken from https://material.io/resources/icons )
+6. truncate too long file names
 
-### Code Splitting
+#### Layout
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This is the layout you should replicate.
+The layout should adjust to screen width, meaning that the icons should only wrap to next row if there is not enough space.
+<img src='./public/3.png' width='800' height="700">
