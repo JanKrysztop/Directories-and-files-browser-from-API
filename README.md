@@ -1,33 +1,5 @@
 # Evojam recruitment task
 
-## How to start up this project :
-
-#### 1. First, click on the button with three dots on it
-
-<img src='./public/1.png' width='1200'>
-
-#### 2. Then select "Download repository" option
-
-<img src='./public/2.png' width='1200'>
-
-#### 3. Unzip downloaded folder to target location
-
-#### 4. Install node.js from this link : https://nodejs.org/en/
-
-#### 5. Open up a console (powershell/bash)
-
-#### 6. Navigate to where "jan_krysztop-evojam_recruitment_task" is located
-
-    cd /.../jan_krysztop-evojam_recruitment_task
-
-#### 7. While inside this folder type in command:
-
-    npm install
-
-#### 8. And finally use this command to start local server and view project in the browser:
-
-    npm start
-
 ## Content of the task:
 
 Build a working version of the attached directory browser.<br />
